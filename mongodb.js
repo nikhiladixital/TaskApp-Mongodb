@@ -32,22 +32,26 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true}, (error, client) => 
             // })
 
     //  INSERTING MANY DOCUMENTS FOR USERS COLLECTION
-            // db.collection('users').insertMany([
-            //     {
-            //         name: 'Nikhila',
-            //         age: 27
-            //     },
-            //     {
-            //         name: 'Anudeep',
-            //         age: 29
-            //     }
-            // ], (error, result) => {
-            //     if(error)
-            //     {
-            //         return console.log('Unable to insert documents!')
-            //     }
-            //     console.log(result.ops)
-            // })
+        //     db.collection('users').insertMany([
+        //         {
+        //             name: 'Nikhila',
+        //             age: 27
+        //         },
+        //         {
+        //             name: 'Anudeep',
+        //             age: 29
+        //         },
+        //         {
+        //                 name : 'Nishanth',
+        //                 age: 27
+        //         }
+        //     ], (error, result) => {
+        //         if(error)
+        //         {
+        //             return console.log('Unable to insert documents!')
+        //         }
+        //         console.log(result.ops)
+        //     })
 
     //  INSERTING MANY DOCUMENTS FOR TASKS COLLECTION
             // db.collection('tasks').insertMany([
@@ -110,15 +114,46 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true}, (error, client) => 
             // })
 
     // UPDATING DATA IN USERS COLLECTION TO A PARTICULAR DOCUMENT - REFERENCING THAT PARTICULAR DOCUMENT BY ITS ID
-                   db.collection('users').updateOne({
-                           _id: new ObjectID("5e207b3a0e876d0a34f42e54")
-                   },{
-                           $set:{
-                                   name: 'Nishanth'
-                           }
-                   }).then((result)=>{
-                        console.log(result)
-                   }).catch((error)=>{
-                        console.log(error)
-                   })
+                // db.collection('users').updateOne({
+                //            _id: new ObjectID("5e207b3a0e876d0a34f42e54")
+                //         },{
+                //            $inc:{
+                //                    age:1
+                //            }
+                //    }).then((result)=>{
+                //         console.log(result)
+                //    }).catch((error)=>{
+                //         console.log(error)
+                //    })
+
+        // UPDATING MANY FIELDS IN A COLLECTION 
+                // db.collection('tasks').updateMany({
+                //         completed: false
+                // },{
+                //         $set: {
+                //                 completed: true
+                //         }
+                // }).then((result)=>{
+                //         console.log(result)
+                // }).catch((error)=>{
+                //         console.log(error)
+                // })
+        // DELETING MANY FIELDS BY MATCHING A CERTAIN CRITERIA
+                // db.collection('users').deleteMany({
+                //         age: 27
+                // }).then((result)=>{
+                //         console.log(result)
+                // }).catch((error)=>{
+                //         console.log(error)
+                // })
+
+        // DELETING ONE FIELD IN USERS COLLECTION BY MATCHING A CERTAIN CRITERIA
+                // db.collection('tasks').deleteOne({
+                //         description: "Do dishes"
+                // }).then((result)=>{
+
+                //         console.log(result)
+                // }).catch((error)=>{
+                //         console.log(error)
+                // })
 })
