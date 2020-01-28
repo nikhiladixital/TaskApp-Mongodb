@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-// CREATING A MODEL FOR TASKS COLLECTION
+//----------------------------------------------- CREATING A MODEL FOR TASKS COLLECTION
 const Task = mongoose.model('Task', {
     description : {
         type: String,
